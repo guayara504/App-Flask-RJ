@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    
+<h1 style="color: #ffffff;background-color: rgb(243, 158, 0)" class="text-center mt-3 mb-4 title body-title">
+    <strong>REVISIÓN</strong></h1>
+<div class="container">
+    <div style="background-color:#0d6efd" class="card box">
+        <div style="background-color:#0d6efd" class="card-body">
+            <h2 class="text-light title">Revisión Juzgados</h2>
+            <table style="background-color:#0d6efd" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-light" scope="col"><strong>Juzgado</strong></th>
+                        <th class="text-light" scope="col"><strong>Ciudad</strong></th>
+                        <th class="text-light" scope="col"><strong>Fecha</strong></th>
+                        <th class="text-light" scope="col"><strong>Digitador</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in data1 %}
+                    <tr>
+                        <td class="text-light"><strong>{{d.z01_radicacion_juzgado}}</strong></td>
+                        <td class="text-light"><strong>{{d.ciudad}}</strong></td>
+                        <td class="text-light"><strong>{{d.fecha_ingreso}}</strong></td>
+                        <td class="text-light"><strong>{{d.digitador}}</strong></td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="background-color:#0d6efd" class="card box mt-4">
+        <div style="background-color:#0d6efd" class="card-body">
+            <h2 class="text-light title ">Revisión Digitacion</h2>
+            <table style="background-color:#0d6efd" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-light" scope="col"><strong>Juzgado</strong></th>
+                        <th class="text-light" scope="col"><strong>Radicado</strong></th>
+                        <th class="text-light" scope="col"><strong>Demandante</strong></th>
+                        <th class="text-light" scope="col"><strong>Demandado</strong></th>
+                        <th class="text-light" scope="col"><strong>Ciudad</strong></th>
+                        <th class="text-light" scope="col"><strong>Fecha</strong></th>
+                        <th class="text-light" scope="col"><strong>Digitador</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in data2 %}
+                    <tr>
+                        <td class="text-light"><strong>{{d.z01_radicacion_juzgado}}</strong></td>
+                        <td class="text-light"><strong>{{d.z01_radicacion_z01_radicacion}}</strong></td>
+                        <td class="text-light"><strong>{{d.demandante}}</strong></td>
+                        <td class="text-light"><strong>{{d.demandado}}</strong></td>
+                        <td class="text-light"><strong>{{d.ciudad}}</strong></td>
+                        <td class="text-light"><strong>{{d.fecha_ingreso}}</strong></td>
+                        <td class="text-light"><strong>{{d.digitador}}</strong></td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <h1></h1>
+    <a href="/" style="color: #ffffff;background-color: rgb(243, 158, 0) "
+        class="btn btn-warning mt-3 mb-4 w-100 body-title active"><strong>RECARGAR</strong></a>
+</div>
+
+{% endblock  %}
